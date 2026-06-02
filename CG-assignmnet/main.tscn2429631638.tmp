@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://di6s726kc84i7"]
+
+[ext_resource type="PackedScene" uid="uid://t8qi1lpx6aco" path="res://Thing.glb" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://cenri0pu6n55w" path="res://Door.glb" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://cssjpfq2mi8a1" path="res://new_script.gd" id="3_h2yge"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0xm2m"]
+sky_top_color = Color(0.71458834, 0.47863287, 0.2351081, 1)
+sky_horizon_color = Color(0.87971485, 0.8971002, 0.85102904, 1)
+ground_bottom_color = Color(0.0656337, 0.37113035, 0.43037066, 1)
+ground_horizon_color = Color(0.87971485, 0.8971002, 0.85102904, 1)
+
+[sub_resource type="Sky" id="Sky_h2yge"]
+sky_material = SubResource("ProceduralSkyMaterial_0xm2m")
+
+[sub_resource type="Environment" id="Environment_1bvp3"]
+background_mode = 2
+sky = SubResource("Sky_h2yge")
+tonemap_mode = 2
+ssao_enabled = true
+glow_enabled = true
+
+[node name="main" type="Node3D" unique_id=922515542]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1430540721]
+environment = SubResource("Environment_1bvp3")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=376387289]
+transform = Transform3D(1, 0, 0, 0, 0.08019893, 0.9967789, 0, -0.9967789, 0.08019893, 0, 63.4233, 0)
+shadow_enabled = true
+
+[node name="floor" type="CSGBox3D" parent="." unique_id=1557504869]
+transform = Transform3D(0.9999791, -0.0062418734, 0.001728259, 0.006258006, 0.9999356, -0.00948182, -0.0016689578, 0.009492443, 0.9999537, 0.76137304, -0.48979807, -0.5792284)
+size = Vector3(20, 0.5, 20)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=950829815]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.013767, 0)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="CSGBox3D" unique_id=1489951944]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.031189442, 0.52477384, 0.32465667)
+
+[node name="MultiMeshInstance3D" type="MultiMeshInstance3D" parent="." unique_id=1720730255]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.014935, 0)
+
+[node name="Thing" parent="." unique_id=1190827544 instance=ExtResource("1_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8014188, 1.091572, 4.753096)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=661770511]
+transform = Transform3D(0.089329064, 0, 0.9960022, 0, 1, 0, -0.9960022, 0, 0.089329064, 10.828802, 0.71188307, 1.1689734)
+
+[node name="Door" parent="." unique_id=1303855986 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(-0.99948776, 0, -0.03200381, 0, 1, 0, 0.03200381, 0, -0.99948776, 5.984242, 0, 4.269065)
+script = ExtResource("3_h2yge")
+
+[node name="Plane" parent="Door" index="0" unique_id=1649501711]
+transform = Transform3D(-0.031974576, 0.9989762, -0.032003794, -0.9994877, -0.032003805, -0.0004014105, -0.0014252433, 0.03197458, 0.99948764, -3.3586264, 0.99547, 2.0133824)
+
+[editable path="Door"]
