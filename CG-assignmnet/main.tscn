@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://di6s726kc84i7"]
 
 [ext_resource type="PackedScene" uid="uid://t8qi1lpx6aco" path="res://Thing.glb" id="1_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://cwx3eyosw8opb" path="res://door1.blend" id="2_0xm2m"]
-[ext_resource type="Script" uid="uid://cssjpfq2mi8a1" path="res://new_script.gd" id="3_h2yge"]
+[ext_resource type="Script" uid="uid://dq2wh6e7mjnyx" path="res://robot_Script.gd" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://veavea4ufdv5" path="res://Robot.blend" id="4_1bvp3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0xm2m"]
 sky_top_color = Color(0.71458834, 0.47863287, 0.2351081, 1)
@@ -30,7 +30,7 @@ transform = Transform3D(1, 0, 0, 0, 0.08019893, 0.9967789, 0, -0.9967789, 0.0801
 shadow_enabled = true
 
 [node name="floor" type="CSGBox3D" parent="." unique_id=1557504869]
-transform = Transform3D(0.9999791, -0.0062418734, 0.001728259, 0.006258006, 0.9999356, -0.00948182, -0.0016689578, 0.009492443, 0.9999537, 0.76137304, -0.48979807, -0.5792284)
+transform = Transform3D(0.9999791, -0.0062418734, 0.001728259, 0.006258006, 0.9999356, -0.00948182, -0.0016689578, 0.009492443, 0.9999537, 0.7617521, -0.5121501, -0.58646107)
 size = Vector3(20, 0.5, 20)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=950829815]
@@ -46,13 +46,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.014935, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8014188, 1.091572, 4.753096)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=661770511]
-transform = Transform3D(0.089329064, 0, 0.9960022, 0, 1, 0, -0.9960022, 0, 0.089329064, 10.828802, 0.71188307, 4.3805437)
+transform = Transform3D(-0.34333172, 0, 0.9392143, 0, 1, 0, -0.9392143, 0, -0.34333172, 11.598106, 1.6972647, 3.487687)
 
-[node name="Door" parent="." unique_id=7366483 instance=ExtResource("2_0xm2m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.118275, 0, 4.933553)
+[node name="Robot" parent="." unique_id=1862780710 instance=ExtResource("4_1bvp3")]
+transform = Transform3D(-0.99499655, 0, -0.09991011, 0, 1, 0, 0.09991011, 0, -0.99499655, 8.573116, -0.118219614, 5.6306896)
 script = ExtResource("3_h2yge")
 
-[node name="Plane" parent="Door" index="0" unique_id=1798119000]
-transform = Transform3D(-0.058504924, -0.99828714, 0, 0, 0, -1, 0.99828714, -0.058504924, 0, 0, 0.99547, 0)
-
-[editable path="Door"]
+[editable path="Robot"]
