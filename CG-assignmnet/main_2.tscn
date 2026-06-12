@@ -43,9 +43,9 @@ size = Vector3(20, 0.5, 20)
 material = SubResource("StandardMaterial3D_acxvi")
 
 [node name="ProcGeo" type="MeshInstance3D" parent="." unique_id=1663948394]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0805173, 9.0158, -8.780098)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("ArrayMesh_2ha8l")
 script = ExtResource("2_acxvi")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=998568375]
-transform = Transform3D(-0.9787888, 0, -0.20487191, -0.050804097, 0.9687652, 0.24271987, 0.19847277, 0.24797982, -0.9482165, 0, 2.8016748, -12.127941)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 2.802, -5)
