@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://uxv017lh3oap"]
+
+[ext_resource type="Texture2D" uid="uid://3k2e03hv5fgl" path="res://MeterGrid.png" id="1_bemee"]
+[ext_resource type="Script" uid="uid://3xqflmvj1f7v" path="res://proc_geo.gd" id="2_acxvi"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_acxvi"]
+sky_top_color = Color(0.5382228, 0.5331911, 0.5553289, 1)
+sky_horizon_color = Color(0.8795403, 0.88101137, 0.88909006, 1)
+ground_bottom_color = Color(0.2683645, 0.2792803, 0.28945732, 1)
+ground_horizon_color = Color(0.8795403, 0.88101137, 0.88909006, 1)
+
+[sub_resource type="Sky" id="Sky_pmt41"]
+sky_material = SubResource("ProceduralSkyMaterial_acxvi")
+
+[sub_resource type="Environment" id="Environment_7dk57"]
+background_mode = 2
+sky = SubResource("Sky_pmt41")
+tonemap_mode = 2
+ssao_enabled = true
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_acxvi"]
+albedo_color = Color(0.4506483, 0.4506483, 0.45064825, 1)
+albedo_texture = ExtResource("1_bemee")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_2ha8l"]
+
+[node name="Main2" type="Node3D" unique_id=2131355815]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1658428567]
+environment = SubResource("Environment_7dk57")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1335607957]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0.021432877, 0)
+shadow_enabled = true
+
+[node name="Ground" type="CSGBox3D" parent="." unique_id=392745026]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.050495148, -0.18859482, 0.0672636)
+size = Vector3(20, 0.5, 20)
+material = SubResource("StandardMaterial3D_acxvi")
+
+[node name="ProcGeo" type="MeshInstance3D" parent="." unique_id=1663948394]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0805173, 9.0158, -8.780098)
+mesh = SubResource("ArrayMesh_2ha8l")
+script = ExtResource("2_acxvi")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=998568375]
+transform = Transform3D(-0.9787888, 0, -0.20487191, -0.050804097, 0.9687652, 0.24271987, 0.19847277, 0.24797982, -0.9482165, 0, 2.8016748, -12.127941)

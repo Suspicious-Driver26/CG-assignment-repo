@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://di6s726kc84i7"]
 
-[ext_resource type="PackedScene" uid="uid://t8qi1lpx6aco" path="res://Thing.glb" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://dq2wh6e7mjnyx" path="res://robot_Script.gd" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://veavea4ufdv5" path="res://Robot.blend" id="4_1bvp3"]
 
@@ -33,17 +32,8 @@ shadow_enabled = true
 transform = Transform3D(0.9999791, -0.0062418734, 0.001728259, 0.006258006, 0.9999356, -0.00948182, -0.0016689578, 0.009492443, 0.9999537, 0.7617521, -0.5121501, -0.58646107)
 size = Vector3(20, 0.5, 20)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=950829815]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.013767, 0)
-
-[node name="CSGSphere3D" type="CSGSphere3D" parent="CSGBox3D" unique_id=1489951944]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.031189442, 0.52477384, 0.32465667)
-
 [node name="MultiMeshInstance3D" type="MultiMeshInstance3D" parent="." unique_id=1720730255]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.014935, 0)
-
-[node name="Thing" parent="." unique_id=1190827544 instance=ExtResource("1_0xm2m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8014188, 1.091572, 4.753096)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=661770511]
 transform = Transform3D(-0.34333172, 0, 0.9392143, 0, 1, 0, -0.9392143, 0, -0.34333172, 11.598106, 1.6972647, 3.487687)

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="CGAssignmnet"
-run/main_scene="uid://di6s726kc84i7"
+run/main_scene="uid://uxv017lh3oap"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
